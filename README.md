@@ -81,3 +81,20 @@ head  /home/jiayi/5moU/data/normal/Tombo_normal/features.feature.tsv
 ```
 ### Step4:Extract feature matrix for machine learning
 https://github.com/JiayiLi21/NanoML-5moU/blob/main/extract_tombo_features.py
+
+Mix the processed two .tsv file for normal and 5moU modified samples, generate a benchmark dataset with 5-mer sequence information and signal numerical information for machine learning.
+
+### Step5: Machine learning methods
+1. Preliminary analysis e.g. non-parametric statistical test, Mann-Whitney test for the four kinds of signal features in 20 feature columns(mean_1:mean_5,sd1:sd5,md1:md5,L-1:L-5) of normal/modified samples within the “AGTTC” and “TGTGC” datasets are visualized with test statistics and p-values. ![prelim](https://github.com/JiayiLi21/NanoML-5moU/blob/main/pics/prelim_test_stat.jpg)
+
+2. Machine learning workflow
+https://github.com/JiayiLi21/NanoML-5moU/tree/main/scripts
+### Step6: Evaluation and visualization
+
+1. Model performance and interpretation with respective types of feature matrix based on read-level signal features per 5mer motif
+   Demo:
+![compare_auc](https://github.com/JiayiLi21/NanoML-5moU/blob/main/pics/compare_auc.jpg)
+2.Detection and visualization of modification sites-reads across the transcript of the IVT-mRNA
+Demo:
+![TGTGC_demo](https://github.com/JiayiLi21/NanoML-5moU/blob/main/pics/TGTGC.jpg)
+
