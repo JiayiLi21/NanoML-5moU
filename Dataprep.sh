@@ -131,3 +131,48 @@ find -maxdepth 5 -name "*.fastq"|xargs -i awk \
 tar -zcvf FASTQ2.tar.gz /data/yuxin/benchmark/test_data/IVT/IVT_Psi/IVT_pseudoU_fastq/pass
 
 #https://xpore.readthedocs.io/en/latest/preparation.html
+
+
+
+
+### Tombo resquiggle
+python3 /home/jiayi/ont_fast5_api/ont_fast5_api/conversion_tools/multi_to_single_fast5.py -i /home/jiayi/5moU/data/normal/guppy_fast5_q/LUC_normal_dRNA_fastq/workspace -s /home/jiayi/5moU/data/normal/Tombo_normal/normal_single_fast5 -t 40 --recursive
+
+/home/jiayi/miniconda3/envs/Tombo/bin/tombo resquiggle /home/jiayi/5moU/data/normal/Tombo_normal/normal_single_fast5 /home/jiayi/5moU/data/ref.fa --processes 4 --num-most-common-errors 5 --overwrite --fit-global-scale --include-event-stdev --ignore-read-locks
+
+
+
+h5ls /home/jiayi/5moU/data/normal/Tombo_normal/normal_single_fast5/0/00045de2-6946-4bb7-b361-307cfead9654.fast5 Group
+tombo preprocess annotate_raw_with_fastqs --fast5-basedir /home/jiayi/5moU/data/normal/guppy_fast5_q/LUC_normal_dRNA_fast5 --fastq-filenames /home/jiayi/5moU/data/normal/guppy_fast5_q/LUC_normal_dRNA_fastq/normal_guppy_fastq.tar.gz
+h5ls /home/jiayi/5moU/data/normal/Tombo_normal/normal_single_fast5/0/00045de2-6946-4bb7-b361-307cfead9654.fast5
+h5ls -r /home/jiayi/5moU/data/normal/Tombo_normal/normal_single_fast5/0/000d9837-df83-4767-9d17-23154a9e8ad4.fast5
+h5ls -r /home/jiayi/5moU/data/normal/Tombo_normal/normal_single_fast5/1/002e8c79-219d-4697-9c70-b8884a695011.fast5
+tombo resquiggle /home/jiayi/5moU/data/normal/Tombo_normal/normal_single_fast5 /home/jiayi/5moU/data/ref.fa --overwrite --basecall-group Basecall_1D_000 --processes 40 --fit-global-scale --include-event-stdev
+conda activate Tombo
+tombo resquiggle /home/jiayi/5moU/data/normal/Tombo_normal/normal_single_fast5 /home/jiayi/5moU/data/ref.fa --overwrite --basecall-group Basecall_1D_000 --processes 40 --fit-global-scale --include-event-stdev
+find  /home/jiayi/5moU/data/normal/Tombo_normal/normal_single_fast5 -name "*.fast5" > /home/jiayi/5moU/data/normal/Tombo_normal/normal_fl_fast5.txt
+cp /home/jiayi/extract_tombo /home/jiayi/5moU/Code
+cp -r /home/jiayi/extract_tombo /home/jiayi/5moU/Code
+cd /home/jiayi/5moU/Code/extract_tombo
+python tombo_extract_df.py --cpu=20  --fl=/home/jiayi/5moU/data/normal/Tombo_normal/normal_fl_fast5.txt -o /home/jiayi/5moU/data/normal/Tombo_normal/features --clip=10
+conda activate base
+python tombo_extract_df.py --cpu=20  --fl=/home/jiayi/5moU/data/normal/Tombo_normal/normal_fl_fast5.txt -o /home/jiayi/5moU/data/normal/Tombo_normal/features --clip=10
+head  /home/jiayi/5moU/data/normal/Tombo_normal/features.feature.tsv
+
+
+## for 5moU modified samples
+python3 /home/jiayi/ont_fast5_api/ont_fast5_api/conversion_tools/multi_to_single_fast5.py -i /home/jiayi/5moU/data/5mou/guppy_5mou_fast5_q/LUC_5mou_dRNA_fastq/workspace -s /home/jiayi/5moU/data/5mou/Tombo_5mou/5mou_single_fast5-t 40 --recursive
+python3 /home/jiayi/ont_fast5_api/ont_fast5_api/conversion_tools/multi_to_single_fast5.py -i /home/jiayi/5moU/data/5mou/guppy_5mou_fast5_q/LUC_5mou_dRNA_fastq/workspace -s /home/jiayi/5moU/data/5mou/Tombo_5mou/5mou_single_fast5 -t 40 --recursive
+tombo preprocess annotate_raw_with_fastqs --fast5-basedir /home/jiayi/5moU/data/5mou/guppy_5mou_fast5_q/LUC_5mou_dRNA_fast5  --fastq-filenames /home/jiayi/5moU/data/5mou/guppy_5mou_fast5_q/LUC_5mou_dRNA_fastq/5mou_guppy_fastq.tar.gz
+h5ls /home/jiayi/5moU/data/5mou/Tombo_5mou/5mou_single_fast5/0/000cecc8-5382-443b-8e10-26ecc99ecf2e.fast5
+h5ls -r /home/jiayi/5moU/data/5mou/Tombo_5mou/5mou_single_fast5/0/000cecc8-5382-443b-8e10-26ecc99ecf2e.fast5
+conda activate Tombo
+tombo resquiggle /home/jiayi/5moU/data/5mou/Tombo_5mou/5mou_single_fast5 /home/jiayi/5moU/data/ref.fa --overwrite --basecall-group Basecall_1D_000 --processes 40 --fit-global-scale --include-event-stdev
+find  /home/jiayi/5moU/data/5mou/Tombo_5mou/5mou_single_fast5 -name "*.fast5" > /home/jiayi/5moU/data/5mou/Tombo_5mou/5mou_fl_fast5.txt
+conda activate base
+cd /home/jiayi/5moU/Code/extract_tombo
+python tombo_extract_df.py --cpu=20  --fl=/home/jiayi/5moU/data/5mou/Tombo_5mou/5mou_fl_fast5.txt -o /home/jiayi/5moU/data/5mou/Tombo_5mou/features --clip=10
+python tombo_to_csv.py
+
+
+
