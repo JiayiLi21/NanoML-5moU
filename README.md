@@ -1,5 +1,5 @@
 # NanoML-5moU
-[under review]NanoML-5moU: A Machine Learning framework to detect 5moU modification in IVT direct RNA sequencing data 
+[under review] Title: Detection and quantification of 5moU RNA modification from direct RNA sequencing data
 
 
 ![Workflow]( https://github.com/JiayiLi21/NanoML-5moU/blob/main/pics/Figure_1_workflow.png "Github logo") 
