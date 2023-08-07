@@ -2,7 +2,7 @@
 [under review]NanoML-5moU: A Machine Learning framework to detect 5moU modification in IVT direct RNA sequencing data 
 
 
-![Workflow]( https://github.com/JiayiLi21/NanoML-5moU/blob/main/pics/workflow.png "Github logo") 
+![Workflow]( https://github.com/JiayiLi21/NanoML-5moU/blob/main/pics/Figure_1_workflow.png "Github logo") 
 
 ## Data collection
 Data Sources: https://trace.ncbi.nlm.nih.gov/Traces/index.html?view=study&acc=SRP166020
@@ -95,7 +95,7 @@ https://github.com/JiayiLi21/NanoML-5moU/tree/main/scripts
 
 1. Model performance and interpretation with respective types of feature matrix based on read-level signal features per 5mer motif
    Demo:
-![compare_auc](https://github.com/JiayiLi21/NanoML-5moU/blob/main/pics/compare_auc.jpg)
+![compare_auc](https://github.com/JiayiLi21/NanoML-5moU/blob/main/pics/Figure_5_multiAUC.jpg)
 2.Detection and visualization of modification sites-reads across the transcript of the IVT-mRNA
 Demo:
 ![TGTGC_demo](https://github.com/JiayiLi21/NanoML-5moU/blob/main/pics/TGTGC.jpg)
