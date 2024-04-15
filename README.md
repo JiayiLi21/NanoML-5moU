@@ -1,5 +1,5 @@
 # NanoML-5moU
-[under review] Title: Detection and quantification of 5moU RNA modification from direct RNA sequencing data
+Title: Detection and quantification of 5moU RNA modification from direct RNA sequencing data
 
 
 ![Workflow]( https://github.com/JiayiLi21/NanoML-5moU/blob/main/pics/Figure_1_workflow.png "Github logo") 
