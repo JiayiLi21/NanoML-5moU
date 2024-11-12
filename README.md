@@ -1,8 +1,16 @@
 # NanoML-5moU
-Title: Detection and quantification of 5moU RNA modification from direct RNA sequencing data
 
+## Citation
+If you use this repository or data in your work, please cite our paper:
 
-![Workflow]( https://github.com/JiayiLi21/NanoML-5moU/blob/main/pics/Figure_1_workflow.png "Github logo") 
+**Li, J**, Sun, F, He, K, Zhang, L, Meng, J, Huang, D & Zhang, Y (2024), "Detection and Quantification of 5moU RNA Modification from Direct RNA Sequencing Data," *Current Genomics*, vol. 25, no. 3, pp. 212-225. [https://doi.org/10.2174/0113892029288843240402042529](https://doi.org/10.2174/0113892029288843240402042529)
+
+### Graphical Abstract
+![Graphical Abstract](https://github.com/JiayiLi21/NanoML-5moU/blob/main/pics/graphical_abstract.jpg)
+
+### Workflow
+![Workflow](https://github.com/JiayiLi21/NanoML-5moU/blob/main/pics/Figure_1_workflow.png "Github logo")
+
 
 ## Data collection
 Data Sources: https://trace.ncbi.nlm.nih.gov/Traces/index.html?view=study&acc=SRP166020
