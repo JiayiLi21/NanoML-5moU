@@ -108,3 +108,7 @@ https://github.com/JiayiLi21/NanoML-5moU/tree/main/scripts
 Demo:
 ![TGTGC_demo](https://github.com/JiayiLi21/NanoML-5moU/blob/main/pics/TGTGC.jpg)
 
+### Additional Section: Validation on newly curated datasets with customized mixed ratios
+![Additional Validation](https://github.com/JiayiLi21/NanoML-5moU/blob/main/pics/add_val.png)
+
+
